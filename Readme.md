@@ -1,17 +1,14 @@
-CS152 Project Phase 1 - Lexical Analyzer Generation Using flex
+CS152 Project - Lexical Analyzer Generation Using flex
 ===============================================================
+## Description
 
-
-[Home Page - Phase1 Lexer](https://www.cs.ucr.edu/~dtan004/proj1/phase1_lexer.html)
+This project contains 3 phases:
+Phase 1 - Lexer that takes a piece of code represented as a string and outputs a list of tokens. Will recognize both code and comments.
+Phase 2 - Parser that takes the sequence of tokens and identifies the grammar of the programming language of the original code. Will identify which tokens represnent while loops, if statements, function headers, function body, variable declarations, and constant variables.
+Phase 3 - Complex code generator that takes a high-level language grammar and translates it into an intermediate representation (pseudo-assembly code used by an interpreter/compiler) as a string.
 
 
 ## Tools preparation
-
-Make sure you have a Linux environment for this project. You can use 'bolt', your own Linux machine, or Windows Subsystem for Linux(WSL). We highly recommend you directly use 'bolt' since it contains all the necessary tools preinstalled. 
-
-```sh
-ssh <your-net-id>@bolt.cs.ucr.edu
-```
 
 Make sure you have the following tools installed and check the version:
 1. flex -V       (>=2.5)
@@ -25,43 +22,10 @@ Make sure you have the following tools installed and check the version:
 Use 'git' to clone the project template and build it by typing 'make'
 
 ```sh
-    git clone <your-repo-link> phase1
-    cd phase1 && make
+    git clone Lexical_Analyzer_Generator
+    cd Lexical_Analyzer_Generator && make
 ```
 
 ## Use the template
 
-You can change any files and add additional C files, but please make sure all files are linked to the final executable file in Makefile. Please don't change the name of 'Makefile' and 'miniL.lex'. After typing make, An executable file 'miniL' is expected to be created as your phase1 lexer.
-
-## Project Submission 
-
-* Start Date: 1/10/21
-* Due Date:   1/16/21
-
-Project submission requires you to commit and push your code to Github after finishing the phase1 project. As the following steps:
-```sh
-git status # it should be under 'main' branch (otherwise you should switch to 'main' branch by typing 'git checkout main')
-git add .  # add all files under current folder into staged changes
-git commit -m "phase1 submission"  # make a commit for your changes
-git push   # push all local commits to Github, this step may need your username and password of Github
-```
-
-Before the deadline, you can create commits and push to Github without any limitation. Please make sure your code under 'main' branch is the last version you wish to submit. After the deadline, please do not push new commits to 'main' branch otherwise it will be considered as a late submission.
-
-![image](https://user-images.githubusercontent.com/6300305/148487911-7bcaa3ac-2c8e-4ee3-9ead-ab908d5e1710.png)
-
-
-## Project Demo and Grading
-
-The project demo will be held in the next lab section after the due date. All teams should attend it since it's important to ensure that your code can move smoothly to the next phase. Contact your TA if you need to change your demo time. 
-You grade will be updated on eLearn (usually in 1 week after your demo time). 
-
-| Grading rules | Points(%) |
-| ---------------- | -- |
-|Successfully Build| 10%|
-|Correctness       | 80%|
-|Demo              | 10%|
-
-## Academic integrity
-
-Copying source code from students in previous semester and other teams will be considered a violation of academic integrity. 
+You can change any files and add additional C files, but please make sure all files are linked to the final executable file in Makefile. Please don't change the name of 'Makefile' and 'miniL.lex'. After typing make, An executable file 'miniL' is expected to be created as your lexer.
