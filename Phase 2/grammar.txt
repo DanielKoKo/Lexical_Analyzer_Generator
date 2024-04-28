@@ -1,0 +1,44 @@
+program -> functions 
+
+functions -> functions function | eps
+
+function -> FUNCTION ID SEMICOLON BEGINPARAMS  declarations  ENDPARAMS BEGINLOCALS declarations ENDLOCALS BEGINBODY statements ENDBODY
+
+declarations -> declarations declaration | eps
+
+declaration -> ID COLON array INTEGER SEMICOLON | ID COLON INTEGER SEMICOLON
+
+array -> ARRAY OPEN_BRACKET NUMBER CLOSE_BRACKET OF
+
+statements -> statements statement | eps
+
+statement -> var ASSIGN expressions SEMICOLON | if SEMICOLON | while SEMICOLON | do SEMICOLON | READ var SEMICOLON | WRITE var SEMICOLON | CONTINUE SEMICOLON | BREAK SEMICOLON | RETURN expressions SEMICOLON
+
+if -> IF bool_exp THEN statements else ENDIF
+
+else -> ELSE statements | eps
+
+while -> WHILE bool-exp BEGINLOOP statements ENDLOOP
+
+do -> DO BEGINLOOP statements ENDLOOP WHILE bool_exp
+
+bool_exp -> not expression comp expression
+
+not -> not NOT | eps
+
+comp -> EQ | NEQ | LT | GT | LTE | GTE
+
+expressions -> multiplicative_expr expression
+
+expression -> expression ADD multiplicative_expr | expression SUB multiplicative_expr | eps
+
+multiplicative_expr -> term multiplicative_terms 
+ 
+​​multiplicative_terms -> multiplicative_terms MULT term | multiplicative_terms DIV term | multiplicative_terms MOD term | eps
+
+term -> var | NUMBER | OPEN_PAR expression CLOSE_PAR | ID OPEN_PAR expression id_expr CLOSE_PAR
+
+id_expr -> COMMA expression id_expr | eps
+
+var -> ID | ID OPEN_BRACKET expressions CLOSE_BRACKET
+
