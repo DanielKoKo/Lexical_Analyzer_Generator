@@ -1,5 +1,5 @@
-CS152 Project - Lexical Analyzer Generation Using flex
-===============================================================
+**Project Timeline: Jan 2021 - Mar 2021**
+
 ## Description
 
 The purpose of this project is to build a complex lexical analyzer generator that can parse a piece of code from a high-level programming language and convert it into an intermediate representation (pseudo-assembly code used by an interpreter/compiler) for compiling.
